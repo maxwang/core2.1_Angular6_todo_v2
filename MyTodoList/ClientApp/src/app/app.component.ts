@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoDataService } from './todo-data.service';
 import { Todo } from './todo';
 
 @Component({
@@ -9,5 +10,17 @@ import { Todo } from './todo';
 
 export class AppComponent {
   title = 'ClientApp';
-  todos: Todo[] = [];
+  newTodo: Todo = new Todo();
+
+  constructor(private todoDataService: TodoDataService) {}
+
+  onAddTodo(todo: Todo) {
+    this.todoDataService.addTodo(todo);
+  }
+  
+  
+  get todos() {
+    console.log('get todos()');
+    return this.todoDataService.getAllTodos();
+  }
 }

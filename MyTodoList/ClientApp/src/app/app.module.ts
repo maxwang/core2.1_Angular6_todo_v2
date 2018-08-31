@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
@@ -19,6 +20,7 @@ import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.com
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [TodoDataService],
